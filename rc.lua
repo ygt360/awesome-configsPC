@@ -77,14 +77,14 @@ shifty.config.tags = {
 
 -- {{{ Shifty tags matching and client rules
 shifty.config.apps = {
-   { match = { "urxvt"                                  }, intrusive  = true             },
-   { match = { "Namoroka", "opera", "luakit"            }, tag = "2:web", nopopup = true },
-   { match = { "newsbeuter", "emesene", "irssi"         }, tag = "3:✉"                   },
-   { match = { "Python Shell",                          }, tag = "6:dev"                 },
-   { match = { "MPlayer", "vlc", "mirage", "gpicview"   }, tag = "4:media"               },
-   { match = { "evince", "libreoffice", "lyx", "xchm"   }, tag = "7:✎"                   },
-   { match = { "mc", "thunar"                           }, tag = "8:files"               },
-   { match = { "keepassx", "brasero",                   }, tag = "9:Misc"                },
+   { match = { "urxvt"                                             }, intrusive  = true             },
+   { match = { "Namoroka", "opera", "luakit"                       }, tag = "2:web", nopopup = true },
+   { match = { "newsbeuter", "emesene", "irssi"                    }, tag = "3:✉"                   },
+   { match = { "Python Shell",                                     }, tag = "6:dev"                 },
+   { match = { "MPlayer", "vlc", "mirage", "gpicview"              }, tag = "4:media"               },
+   { match = { "evince", "zathura", "libreoffice", "lyx", "xchm"   }, tag = "7:✎"                   },
+   { match = { "mc", "thunar"                                      }, tag = "8:files"               },
+   { match = { "keepassx", "brasero",                              }, tag = "9:Misc"                },
    { match = { "" }, 
            buttons = awful.util.table.join (
            awful.button({ }, 1, function (c) client.focus = c; c:raise() end),
@@ -350,6 +350,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "F3", function () exec(terminal .. " -e newsbeuter") end),
     awful.key({ modkey, "Shift"   }, "F3", function () exec("emesene") end),
     awful.key({ modkey,           }, "F4", function () exec("vlc") end),
+    awful.key({ modkey, "Shift"   }, "F7", function () exec("libreoffice") end),
     awful.key({ modkey,           }, "F8", function () exec("thunar") end),
     awful.key({ modkey, "Shift"   }, "F8", function () exec(terminal ..  " -e mc") end),
     awful.key({ modkey,           }, "p",  function() awful.util.spawn( "dmenu_run" ) end),
